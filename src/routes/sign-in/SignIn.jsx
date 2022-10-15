@@ -1,5 +1,7 @@
-import React from "react";
+import React, { } from "react";
+import SignUpForm from "../../components/sign-up-form/SignUpForm.jsx";
 import {
+  auth,
   signInWithGooglePopup,
   createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils.js";
@@ -14,6 +16,7 @@ const SignIn = () => {
     <div>
       <h1>Sign In</h1>
       <button onClick={logGoogleUser}>Sign in with Google Popup</button>
+      <SignUpForm />
     </div>
   );
 };

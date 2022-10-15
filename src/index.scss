@@ -16,16 +16,20 @@
   padding: 0;
 }
 
+h1,h2,h3,h4,h5,h6 {
+  color: #252525;
+}
+
 h1 {
-  font-size: 3.2em;
+  font-size: 2.5em;
   line-height: 1.1;
 }
 
-p, a {
+p, a, button {
   font-family: 'Inter', sans-serif;
+  color: #333;
 }
 
 a {
   text-decoration: none;
-  color: #252525;
 }

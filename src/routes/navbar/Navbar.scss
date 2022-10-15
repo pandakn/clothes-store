@@ -1,10 +1,12 @@
+$brown-color: #853f21;
+
 nav {
   height: 70px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 24px;
 
   .logo-container {
     height: 100%;
@@ -14,12 +16,12 @@ nav {
     div {
       font-size: 1.5rem;
       letter-spacing: 12px;
-      font-family: 'Poppins', sans-serif;
+      font-family: "Poppins", sans-serif;
       font-weight: bold;
     }
 
     span {
-      color: #853f21;
+      color: $brown-color;
     }
   }
 
@@ -38,6 +40,10 @@ nav {
       &:hover {
         opacity: 1;
       }
+    }
+    
+    &:last-child {
+      margin-right: 25px;
     }
   }
 }

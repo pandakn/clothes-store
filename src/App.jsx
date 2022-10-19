@@ -5,10 +5,8 @@ import Navbar from "./routes/navbar/Navbar";
 import Authentication from "./routes/authentication/Authentication";
 
 const Shop = () => {
-  return (
-    <h1>Shop page</h1>
-  )
-}
+  return <h1>Shop page</h1>;
+};
 
 const App = () => {
   return (

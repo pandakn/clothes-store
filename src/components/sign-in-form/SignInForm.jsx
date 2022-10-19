@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import { useState, useContext } from "react";
+
 import FormInput from "../form-input/FormInput";
 import Button from "../button/Button";
+
 import "./SignInForm.scss";
+
+import { UserContext } from "../../contexts/UserContext";
 
 import {
   signInWithGooglePopup,
@@ -18,6 +22,8 @@ const SignInForm = () => {
   const [fromField, setFromField] = useState(defaultFromField);
   const { email, password } = fromField;
 
+  const { setCurrentUser } = useContext(UserContext);
+
   const resetFormField = () => {
     setFromField(defaultFromField);
   };
@@ -31,20 +37,21 @@ const SignInForm = () => {
     event.preventDefault();
 
     try {
-      const response = await signInAuthUserWithEmailAndPassword(
+      const { user } = await signInAuthUserWithEmailAndPassword(
         email,
         password
       );
-      console.log(response);
+      setCurrentUser(user);
+
       resetFormField();
     } catch (error) {
       console.log(error);
       switch (error.code) {
-        case 'auth/user-not-found':
-          alert('no user associated with this email');
+        case "auth/user-not-found":
+          alert("no user associated with this email");
           break;
-        case 'auth/wrong-password':
-          alert('incorrect password for email');
+        case "auth/wrong-password":
+          alert("incorrect password for email");
           break;
         default:
           console.log(err);
